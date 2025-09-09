@@ -1,29 +1,76 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-     background: linear-gradient(40deg, #01030e, #1042b4);
-     font-family: "Orbitron", monospace;  
+body {
+  background: linear-gradient(135deg, #798db2, #3b6aa3);
+  font-family: "Orbitron", monospace;
+  transition: background 0.5s ease;
 }
 
-.container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-#digital{
-    color: white;
-    border: 1px solid white;
-    font-size: 40px;
-    padding: 10px;
-    width: min(80%, 300px);
-    text-align: center;
-    border-radius: 8px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-    transition: all 0.3s ease-in-out;
+.clock-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+
+#time {
+  font-size: 60px;
+  color: white;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+  margin-bottom: 10px;
+}
+
+#date {
+  font-size: 20px;
+  color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+.controls button {
+  background: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.controls button:hover {
+  background: #1042b4;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Dark theme */
+body.dark {
+  background: linear-gradient(135deg, #222, #111);
+}
+
+body.dark .clock-box {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+body.dark #time {
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc;
+}
+
+body.dark #date {
+  color: #ddd;
 }
