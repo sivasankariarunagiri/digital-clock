@@ -64,12 +64,21 @@ input.addEventListener('input', () => {
   if(query.length === 0) return;
 
   const matches = countries.filter(c => c.name.toLowerCase().includes(query)).slice(0,5);
+
+   if(matches.length === 0) {
+    const li = document.createElement('li');
+    li.textContent = "No matching countries found. Please try again later.";
+    li.style.cursor = 'default';
+    suggestions.appendChild(li);
+  } 
+  else {
   matches.forEach(c => {
     const li = document.createElement('li');
     li.textContent = c.name;
     li.addEventListener('click', () => selectCountry(c));
     suggestions.appendChild(li);
   });
+}
 });
 
 input.addEventListener('keypress', (e) => {
